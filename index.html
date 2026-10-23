@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="mn">
 <head>
@@ -87,6 +88,12 @@
       font-weight: bold;
       border: none;
       cursor: pointer;
+      font-size: 15px;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
 
     section {
@@ -109,8 +116,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 22px;
       margin-top: 30px;
     }
@@ -165,6 +171,46 @@
       overflow-wrap: anywhere;
     }
 
+    .contact-form {
+      margin-top: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccd5e0;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: 2px solid #e8b957;
+      border-color: #174a78;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+    }
+
+    #form-status {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+    }
+
     footer {
       background: #102d50;
       color: white;
@@ -185,6 +231,10 @@
       section {
         padding: 45px 6%;
       }
+
+      .contact-info {
+        padding: 20px;
+      }
     }
   </style>
 </head>
@@ -204,6 +254,8 @@
   </header>
 
   <main>
+
+    <!-- Нүүр хуудас -->
     <div class="hero" id="home">
       <h1>Ирээдүйгээ мэргэжлээрээ бүтээе!</h1>
 
@@ -217,6 +269,7 @@
       </a>
     </div>
 
+    <!-- Бидний тухай -->
     <section id="about">
       <h2 class="section-title">Бидний тухай</h2>
 
@@ -247,6 +300,7 @@
       </div>
     </section>
 
+    <!-- Мэргэжлүүд -->
     <section id="courses">
       <h2 class="section-title">Мэргэжлийн чиглэлүүд</h2>
 
@@ -282,6 +336,7 @@
       </div>
     </section>
 
+    <!-- Мэдээ -->
     <section id="news">
       <h2 class="section-title">Мэдээ, мэдээлэл</h2>
 
@@ -320,38 +375,142 @@
       </p>
     </section>
 
+    <!-- Холбоо барих болон Netlify Form -->
     <section id="contact">
       <h2 class="section-title">Холбоо барих</h2>
 
+      <p class="intro">
+        Та асуулт, санал хүсэлтээ доорх маягтаар илгээнэ үү.
+      </p>
+
       <div class="contact-info">
-        <p><strong>🏫 Сургууль:</strong>
+
+        <p>
+          <strong>🏫 Сургууль:</strong>
           ШУТИС-ийн харьяа Хөвсгөл аймаг дахь Политехник коллеж
         </p>
 
-        <p><strong>📍 Хаяг:</strong>
+        <p>
+          <strong>📍 Хаяг:</strong>
           Хөвсгөл аймаг, Мөрөн сум, 13-р хороо
         </p>
 
-        <p><strong>📞 Утас:</strong>
+        <p>
+          <strong>📞 Утас:</strong>
           <a href="tel:+97699382221">9938-2221</a>
         </p>
 
-        <p><strong>✉️ И-мэйл:</strong>
+        <p>
+          <strong>✉️ И-мэйл:</strong>
           <a href="mailto:polytechniccollege.kh@gmail.com">
             polytechniccollege.kh@gmail.com
           </a>
         </p>
 
-        <p>
-          <a class="btn"
-             href="https://www.khuvsgulpolytech.edu.mn/"
-             target="_blank"
-             rel="noopener noreferrer">
+        <hr style="margin:25px 0; border:0; border-top:1px solid #ddd;">
+
+        <h3 style="color:#102d50; margin-bottom:15px;">
+          Мессеж илгээх
+        </h3>
+
+        <form
+          id="contact-form"
+          name="holboo-barih"
+          method="POST"
+          action="/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="contact-form"
+        >
+          <input
+            type="hidden"
+            name="form-name"
+            value="holboo-barih"
+          >
+
+          <!-- Спам хамгаалалтын далд талбар -->
+          <div hidden>
+            <label>
+              Энэ талбарыг бөглөж болохгүй:
+              <input name="bot-field">
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="full-name">Таны нэр *</label>
+            <input
+              type="text"
+              id="full-name"
+              name="name"
+              placeholder="Нэрээ оруулна уу"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">И-мэйл хаяг *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@gmail.com"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Утасны дугаар</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Утасны дугаараа оруулна уу"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message">Мессеж *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Санал хүсэлтээ бичнэ үү..."
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            id="submit-button"
+            class="btn"
+          >
+            Мессеж илгээх
+          </button>
+
+          <p
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </form>
+
+        <p style="margin-top:25px;">
+          <a
+            class="btn"
+            href="https://www.khuvsgulpolytech.edu.mn/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Албан ёсны сайт үзэх
           </a>
         </p>
+
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -360,16 +519,66 @@
   </footer>
 
   <script>
-    // Цэсний холбоосоор хэсэг рүү гүйлгэж очно.
+    // Цэсний холбоосууд
     document.querySelectorAll('nav a').forEach(function(link) {
       link.addEventListener('click', function() {
-        console.log('Цэс сонгогдлоо:', link.textContent);
+        console.log('Цэс сонгогдлоо:', link.textContent.trim());
       });
     });
 
-    // Хуудас нээгдэхэд мэндчилгээ харуулахгүйгээр
-    // браузерын консолд мэдээлэл хэвлэнэ.
-    console.log('Хөвсгөл Политехник Коллежийн сайт ажиллаж байна.');
+    // Netlify Forms
+    const contactForm = document.getElementById('contact-form');
+    const submitButton = document.getElementById('submit-button');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Илгээж байна...';
+      formStatus.textContent = '';
+
+      try {
+        const formData = new FormData(contactForm);
+
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams(formData).toString()
+        });
+
+        if (!response.ok) {
+          throw new Error('Илгээлт амжилтгүй боллоо.');
+        }
+
+        formStatus.textContent =
+          'Амжилттай илгээгдлээ! Баярлалаа.';
+
+        formStatus.style.color = 'green';
+        contactForm.reset();
+
+      } catch (error) {
+        formStatus.textContent =
+          'Илгээхэд алдаа гарлаа. Дахин оролдоно уу.';
+
+        formStatus.style.color = 'red';
+        console.error('Form error:', error);
+
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Мессеж илгээх';
+      }
+    });
+
+    console.log(
+      'Хөвсгөл Политехник Коллежийн сайт ажиллаж байна.'
+    );
   </script>
 
 </body>
