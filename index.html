@@ -1,523 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="mn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Хөвсгөл Политехник Коллеж</title>
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      color: #24344d;
-      background: #f4f7fb;
-      line-height: 1.7;
-    }
-
-    header {
-      background: #102d50;
-      color: white;
-      padding: 20px 7%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    header h2 {
-      font-size: 20px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #f5c86a;
-    }
-
-    .hero {
-      min-height: 430px;
-      padding: 90px 8%;
-      color: white;
-      background:
-        linear-gradient(90deg, #102d50ee, #102d5070),
-        url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(30px, 5vw, 48px);
-      max-width: 700px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      border-radius: 7px;
-      background: #e8b957;
-      color: #102d50;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    section {
-      padding: 65px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      color: #102d50;
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .intro {
-      max-width: 760px;
-      text-align: center;
-      margin: 0 auto 35px;
-      color: #5c6b80;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 26px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px #102d5010;
-      border-bottom: 4px solid #e8b957;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card .symbol {
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
-
-    .card h3 {
-      color: #174a78;
-      margin-bottom: 10px;
-    }
-
-    #about {
-      background: white;
-    }
-
-    .news-date {
-      color: #8a98aa;
-      font-size: 13px;
-      margin-bottom: 10px;
-    }
-
-    #contact {
-      background: #eaf0f7;
-    }
-
-    .contact-info {
-      max-width: 650px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-form {
-      margin-top: 25px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccd5e0;
-      border-radius: 6px;
-      font-family: Arial, sans-serif;
-      font-size: 15px;
-      background: #fff;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: 2px solid #e8b957;
-      border-color: #174a78;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-    }
-
-    #form-status {
-      margin-top: 15px;
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      background: #102d50;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        padding: 65px 7%;
-      }
-
-      section {
-        padding: 45px 6%;
-      }
-
-      .contact-info {
-        padding: 20px;
-      }
-    }
+    *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+    body{font-family:Arial,sans-serif;color:#24344d;background:#f4f7fb;line-height:1.7}
+    header{background:#102d50;color:white;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+    header h2{font-size:20px} nav{display:flex;flex-wrap:wrap;gap:18px}
+    nav a{color:white;text-decoration:none;font-size:14px} nav a:hover{color:#f5c86a}
+    .hero{min-height:430px;padding:90px 8%;color:white;background:linear-gradient(90deg,#102d50ee,#102d5070),url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80") center/cover;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+    .hero h1{font-size:clamp(30px,5vw,48px);max-width:700px;line-height:1.3;margin-bottom:20px}.hero p{max-width:600px;margin-bottom:25px}
+    .btn{display:inline-block;padding:12px 22px;border-radius:7px;background:#e8b957;color:#102d50;text-decoration:none;font-weight:bold;border:none;cursor:pointer;font-size:15px}
+    .btn:disabled{opacity:.6;cursor:not-allowed} section{padding:65px 8%}.section-title{text-align:center;color:#102d50;font-size:30px;margin-bottom:12px}
+    .intro{max-width:760px;text-align:center;margin:0 auto 35px;color:#5c6b80}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:30px}
+    .card{background:white;padding:26px;border-radius:12px;box-shadow:0 5px 20px #102d5010;border-bottom:4px solid #e8b957;transition:transform .2s}.card:hover{transform:translateY(-5px)}
+    .card .symbol{font-size:34px;margin-bottom:10px}.card h3{color:#174a78;margin-bottom:10px}#about{background:white}.news-date{color:#8a98aa;font-size:13px;margin-bottom:10px}#contact{background:#eaf0f7}
+    .contact-info{max-width:650px;margin:auto;background:white;padding:30px;border-radius:12px}.contact-info p{margin:10px 0;overflow-wrap:anywhere}
+    .contact-form{margin-top:25px}.form-group{margin-bottom:18px}.form-group label{display:block;font-weight:bold;margin-bottom:6px}
+    .form-group input,.form-group textarea{width:100%;padding:12px;border:1px solid #ccd5e0;border-radius:6px;font-family:Arial,sans-serif;font-size:15px;background:white}
+    .form-group input:focus,.form-group textarea:focus{outline:2px solid #e8b957;border-color:#174a78}.form-group textarea{resize:vertical}#form-status{margin-top:15px;overflow-wrap:anywhere}
+    footer{background:#102d50;color:white;text-align:center;padding:25px 15px}
+    @media(max-width:600px){header{flex-direction:column;align-items:flex-start}.hero{padding:65px 7%}section{padding:45px 6%}.contact-info{padding:20px}}
   </style>
 </head>
-
 <body>
-
   <header>
     <h2>🎓 ХӨВСГӨЛ ПОЛИТЕХНИК</h2>
-
-    <nav>
-      <a href="#home">Нүүр</a>
-      <a href="#about">Бидний тухай</a>
-      <a href="#courses">Мэргэжлүүд</a>
-      <a href="#news">Мэдээ</a>
-      <a href="#contact">Холбоо барих</a>
-    </nav>
+    <nav><a href="#home">Нүүр</a><a href="#about">Бидний тухай</a><a href="#courses">Мэргэжлүүд</a><a href="#news">Мэдээ</a><a href="#admission">Элсэлт</a><a href="#contact">Холбоо барих</a></nav>
   </header>
-
   <main>
+    <div class="hero" id="home"><h1>Ирээдүйгээ мэргэжлээрээ бүтээе!</h1><p>ШУТИС-ийн харьяа Хөвсгөл аймаг дахь Политехник коллежийн танилцуулга веб сайтад тавтай морил.</p><a class="btn" href="#courses">Мэргэжлүүдтэй танилцах</a></div>
+    <section id="about"><h2 class="section-title">Бидний тухай</h2><p class="intro">Манай сургууль нь суралцагчдад мэргэжлийн мэдлэг, практик ур чадвар эзэмшүүлж, хөдөлмөрийн зах зээлд бэлтгэх зорилготой сургалтын байгууллага юм.</p>
+      <div class="cards"><article class="card"><div class="symbol">📚</div><h3>Чанартай боловсрол</h3><p>Мэргэжлийн мэдлэг, онолын суурийг эзэмшинэ.</p></article><article class="card"><div class="symbol">🛠️</div><h3>Практик сургалт</h3><p>Дадлага хийж, ажлын ур чадвараа хөгжүүлнэ.</p></article><article class="card"><div class="symbol">🌱</div><h3>Ирээдүйн хөгжил</h3><p>Өөрийн хүссэн мэргэжлээрээ хөгжих боломжтой.</p></article></div>
+    </section>
+    <section id="courses"><h2 class="section-title">Мэргэжлийн чиглэлүүд</h2><p class="intro">Доорх нь жишээ чиглэлүүд юм. Сургуулийнхаа одоогийн мэргэжлийн жагсаалтаар солиорой.</p>
+      <div class="cards"><article class="card"><div class="symbol">💻</div><h3>Мэдээллийн технологи</h3><p>Компьютер, программ хангамж, цахим ур чадвар.</p></article><article class="card"><div class="symbol">🏗️</div><h3>Барилгын чиглэл</h3><p>Барилгын технологи, хэмжилт, дадлага.</p></article><article class="card"><div class="symbol">🌲</div><h3>Ойн аж ахуй</h3><p>Ойн нөөц, хамгаалал, зохистой ашиглалт.</p></article><article class="card"><div class="symbol">🚜</div><h3>Техник, тоног төхөөрөмж</h3><p>Техникийн ашиглалт, засвар үйлчилгээ.</p></article></div>
+    </section>
+    <section id="news"><h2 class="section-title">Мэдээ, мэдээлэл</h2><div class="cards"><article class="card"><p class="news-date">Сургуулийн мэдээлэл</p><h3>Элсэлтийн мэдээлэл</h3><p>Элсэлт, мэргэжлийн сонголт, бүрдүүлэх материалын мэдээллийг энд оруулна.</p></article><article class="card"><p class="news-date">Сургалтын үйл ажиллагаа</p><h3>Оюутны бүтээл</h3><p>Суралцагчдын хийсэн бүтээл, дадлага, тэмцээн уралдааны мэдээг энд байрлуулна.</p></article><article class="card"><p class="news-date">Сургуулийн үйл ажиллагаа</p><h3>Арга хэмжээ</h3><p>Сургуулийн өдөрлөг, уулзалт, үйл ажиллагааны зураг, мэдээлэл.</p></article></div><p class="intro" style="margin-top:25px">Анхаар: Дээрх мэдээнүүд нь загварын жишээ бөгөөд бодит мэдээ биш.</p></section>
 
-    <!-- Нүүр хуудас -->
-    <div class="hero" id="home">
-      <h1>Ирээдүйгээ мэргэжлээрээ бүтээе!</h1>
-
-      <p>
-        ШУТИС-ийн харьяа Хөвсгөл аймаг дахь
-        Политехник коллежийн танилцуулга веб сайтад тавтай морил.
-      </p>
-
-      <a class="btn" href="#courses">
-        Мэргэжлүүдтэй танилцах
-      </a>
-    </div>
-
-    <!-- Бидний тухай -->
-    <section id="about">
-      <h2 class="section-title">Бидний тухай</h2>
-
+    <section id="admission">
+      <h2 class="section-title">Элсэлтийн бүртгэл</h2>
       <p class="intro">
-        Манай сургууль нь суралцагчдад мэргэжлийн мэдлэг,
-        практик ур чадвар эзэмшүүлж, хөдөлмөрийн зах зээлд
-        бэлтгэх зорилготой сургалтын байгууллага юм.
+        Манай сургуульд суралцах хүсэлтэй бол доорх маягтыг бөглөнө үү.
+        Таны мэдээллийг элсэлтийн хүсэлт болгон Netlify Forms-д илгээнэ.
       </p>
 
-      <div class="cards">
-        <article class="card">
-          <div class="symbol">📚</div>
-          <h3>Чанартай боловсрол</h3>
-          <p>Мэргэжлийн мэдлэг, онолын суурийг эзэмшинэ.</p>
-        </article>
+      <form
+        id="admission-form"
+        name="elseltiin-burtgel"
+        method="POST"
+        action="/"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="admission-form"
+      >
+        <input type="hidden" name="form-name" value="elseltiin-burtgel">
 
-        <article class="card">
-          <div class="symbol">🛠️</div>
-          <h3>Практик сургалт</h3>
-          <p>Дадлага хийж, ажлын ур чадвараа хөгжүүлнэ.</p>
-        </article>
+        <div hidden>
+          <label>Энэ талбарыг бөглөж болохгүй:
+            <input name="bot-field">
+          </label>
+        </div>
 
-        <article class="card">
-          <div class="symbol">🌱</div>
-          <h3>Ирээдүйн хөгжил</h3>
-          <p>Өөрийн хүссэн мэргэжлээрээ хөгжих боломжтой.</p>
-        </article>
-      </div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="student-name">Овог, нэр *</label>
+            <input id="student-name" name="student_name" type="text"
+              autocomplete="name" placeholder="Овог, нэрээ оруулна уу" required>
+          </div>
+
+          <div class="form-group">
+            <label for="student-phone">Утасны дугаар *</label>
+            <input id="student-phone" name="phone" type="tel"
+              autocomplete="tel" placeholder="Жишээ: 99112233" required>
+          </div>
+
+          <div class="form-group">
+            <label for="student-email">И-мэйл хаяг</label>
+            <input id="student-email" name="email" type="email"
+              autocomplete="email" placeholder="example@gmail.com">
+          </div>
+
+          <div class="form-group">
+            <label for="birth-date">Төрсөн огноо *</label>
+            <input id="birth-date" name="birth_date" type="date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="education">Төгссөн боловсрол *</label>
+            <select id="education" name="education" required>
+              <option value="">Сонгоно уу</option>
+              <option value="Суурь боловсрол">Суурь боловсрол</option>
+              <option value="Бүрэн дунд боловсрол">Бүрэн дунд боловсрол</option>
+              <option value="Бусад">Бусад</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="course-choice">Сонгох мэргэжил *</label>
+            <select id="course-choice" name="course" required>
+              <option value="">Мэргэжлээ сонгоно уу</option>
+              <option value="Мэдээллийн технологи">Мэдээллийн технологи</option>
+              <option value="Барилгын чиглэл">Барилгын чиглэл</option>
+              <option value="Ойн аж ахуй">Ойн аж ахуй</option>
+              <option value="Техник, тоног төхөөрөмж">Техник, тоног төхөөрөмж</option>
+              <option value="Бусад мэргэжил">Бусад мэргэжил</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="guardian-name">Эцэг эх / асран хамгаалагчийн нэр</label>
+            <input id="guardian-name" name="guardian_name" type="text"
+              placeholder="Нэр (шаардлагатай бол)">
+          </div>
+
+          <div class="form-group">
+            <label for="guardian-phone">Эцэг эх / асран хамгаалагчийн утас</label>
+            <input id="guardian-phone" name="guardian_phone" type="tel"
+              placeholder="Утасны дугаар (шаардлагатай бол)">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="admission-message">Нэмэлт мэдээлэл</label>
+          <textarea id="admission-message" name="message" rows="4"
+            placeholder="Асуулт, нэмэлт мэдээллээ бичнэ үү"></textarea>
+        </div>
+
+        <p class="form-note">
+          * тэмдэгтэй талбаруудыг заавал бөглөнө. Энэ нь урьдчилсан бүртгэлийн
+          хүсэлт бөгөөд сургуулийн албан ёсны элсэлт баталгаажсан гэсэн үг биш.
+        </p>
+
+        <button type="submit" id="admission-submit" class="btn">
+          Элсэлтийн хүсэлт илгээх
+        </button>
+
+        <p id="admission-status" role="status" aria-live="polite"></p>
+      </form>
     </section>
 
-    <!-- Мэргэжлүүд -->
-    <section id="courses">
-      <h2 class="section-title">Мэргэжлийн чиглэлүүд</h2>
-
-      <p class="intro">
-        Доорх нь жишээ чиглэлүүд юм.
-        Сургуулийнхаа одоогийн мэргэжлийн жагсаалтаар солиорой.
-      </p>
-
-      <div class="cards">
-        <article class="card">
-          <div class="symbol">💻</div>
-          <h3>Мэдээллийн технологи</h3>
-          <p>Компьютер, программ хангамж, цахим ур чадвар.</p>
-        </article>
-
-        <article class="card">
-          <div class="symbol">🏗️</div>
-          <h3>Барилгын чиглэл</h3>
-          <p>Барилгын технологи, хэмжилт, дадлага.</p>
-        </article>
-
-        <article class="card">
-          <div class="symbol">🌲</div>
-          <h3>Ойн аж ахуй</h3>
-          <p>Ойн нөөц, хамгаалал, зохистой ашиглалт.</p>
-        </article>
-
-        <article class="card">
-          <div class="symbol">🚜</div>
-          <h3>Техник, тоног төхөөрөмж</h3>
-          <p>Техникийн ашиглалт, засвар үйлчилгээ.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Мэдээ -->
-    <section id="news">
-      <h2 class="section-title">Мэдээ, мэдээлэл</h2>
-
-      <div class="cards">
-        <article class="card">
-          <p class="news-date">Сургуулийн мэдээлэл</p>
-          <h3>Элсэлтийн мэдээлэл</h3>
-          <p>
-            Элсэлт, мэргэжлийн сонголт, бүрдүүлэх
-            материалын мэдээллийг энд оруулна.
-          </p>
-        </article>
-
-        <article class="card">
-          <p class="news-date">Сургалтын үйл ажиллагаа</p>
-          <h3>Оюутны бүтээл</h3>
-          <p>
-            Суралцагчдын хийсэн бүтээл, дадлага,
-            тэмцээн уралдааны мэдээг энд байрлуулна.
-          </p>
-        </article>
-
-        <article class="card">
-          <p class="news-date">Сургуулийн үйл ажиллагаа</p>
-          <h3>Арга хэмжээ</h3>
-          <p>
-            Сургуулийн өдөрлөг, уулзалт,
-            үйл ажиллагааны зураг, мэдээлэл.
-          </p>
-        </article>
-      </div>
-
-      <p class="intro" style="margin-top:25px">
-        Анхаар: Дээрх мэдээнүүд нь загварын жишээ бөгөөд
-        бодит мэдээ биш.
-      </p>
-    </section>
-
-    <!-- Холбоо барих болон Netlify Form -->
-    <section id="contact">
-      <h2 class="section-title">Холбоо барих</h2>
-
-      <p class="intro">
-        Та асуулт, санал хүсэлтээ доорх маягтаар илгээнэ үү.
-      </p>
-
-      <div class="contact-info">
-
-        <p>
-          <strong>🏫 Сургууль:</strong>
-          ШУТИС-ийн харьяа Хөвсгөл аймаг дахь Политехник коллеж
-        </p>
-
-        <p>
-          <strong>📍 Хаяг:</strong>
-          Хөвсгөл аймаг, Мөрөн сум, 13-р хороо
-        </p>
-
-        <p>
-          <strong>📞 Утас:</strong>
-          <a href="tel:+97699382221">9938-2221</a>
-        </p>
-
-        <p>
-          <strong>✉️ И-мэйл:</strong>
-          <a href="mailto:polytechniccollege.kh@gmail.com">
-            polytechniccollege.kh@gmail.com
-          </a>
-        </p>
-
-        <hr style="margin:25px 0; border:0; border-top:1px solid #ddd;">
-
-        <h3 style="color:#102d50; margin-bottom:15px;">
-          Мессеж илгээх
-        </h3>
-
-        <form
-          id="contact-form"
-          name="holboo-barih"
-          method="POST"
-          action="/"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="contact-form"
-        >
-          <input
-            type="hidden"
-            name="form-name"
-            value="holboo-barih"
-          >
-
-          <!-- Спам хамгаалалтын далд талбар -->
-          <div hidden>
-            <label>
-              Энэ талбарыг бөглөж болохгүй:
-              <input name="bot-field">
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label for="full-name">Таны нэр *</label>
-            <input
-              type="text"
-              id="full-name"
-              name="name"
-              placeholder="Нэрээ оруулна уу"
-              autocomplete="name"
-              required
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="email">И-мэйл хаяг *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="example@gmail.com"
-              autocomplete="email"
-              required
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Утасны дугаар</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="Утасны дугаараа оруулна уу"
-              autocomplete="tel"
-            >
-          </div>
-
-          <div class="form-group">
-            <label for="message">Мессеж *</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              placeholder="Санал хүсэлтээ бичнэ үү..."
-              required
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            id="submit-button"
-            class="btn"
-          >
-            Мессеж илгээх
-          </button>
-
-          <p
-            id="form-status"
-            role="status"
-            aria-live="polite"
-          ></p>
+    <section id="contact"><h2 class="section-title">Холбоо барих</h2><p class="intro">Та асуулт, санал хүсэлтээ доорх маягтаар илгээнэ үү.</p>
+      <div class="contact-info"><p><strong>🏫 Сургууль:</strong> ШУТИС-ийн харьяа Хөвсгөл аймаг дахь Политехник коллеж</p><p><strong>📍 Хаяг:</strong> Хөвсгөл аймаг, Мөрөн сум, 13-р хороо</p><p><strong>📞 Утас:</strong> <a href="tel:+97699382221">9938-2221</a></p><p><strong>✉️ И-мэйл:</strong> <a href="mailto:polytechniccollege.kh@gmail.com">polytechniccollege.kh@gmail.com</a></p>
+        <hr style="margin:25px 0;border:0;border-top:1px solid #ddd"><h3 style="color:#102d50;margin-bottom:15px">Мессеж илгээх</h3>
+        <form id="contact-form" name="holboo-barih" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+          <input type="hidden" name="form-name" value="holboo-barih">
+          <div hidden><label>Энэ талбарыг бөглөж болохгүй: <input name="bot-field"></label></div>
+          <div class="form-group"><label for="full-name">Таны нэр *</label><input type="text" id="full-name" name="name" placeholder="Нэрээ оруулна уу" autocomplete="name" required></div>
+          <div class="form-group"><label for="email">И-мэйл хаяг *</label><input type="email" id="email" name="email" placeholder="example@gmail.com" autocomplete="email" required></div>
+          <div class="form-group"><label for="phone">Утасны дугаар</label><input type="tel" id="phone" name="phone" placeholder="Утасны дугаараа оруулна уу" autocomplete="tel"></div>
+          <div class="form-group"><label for="message">Мессеж *</label><textarea id="message" name="message" rows="5" placeholder="Санал хүсэлтээ бичнэ үү..." required></textarea></div>
+          <button type="submit" id="submit-button" class="btn">Мессеж илгээх</button><p id="form-status" role="status" aria-live="polite"></p>
         </form>
-
-        <p style="margin-top:25px;">
-          <a
-            class="btn"
-            href="https://www.khuvsgulpolytech.edu.mn/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Албан ёсны сайт үзэх
-          </a>
-        </p>
-
+        <p style="margin-top:25px"><a class="btn" href="https://www.khuvsgulpolytech.edu.mn/" target="_blank" rel="noopener noreferrer">Албан ёсны сайт үзэх</a></p>
       </div>
     </section>
-
   </main>
-
-  <footer>
-    <p>© 2026 Хөвсгөл аймаг дахь Политехник коллеж</p>
-    <p>Суралцаж, хөгжиж, бүтээе!</p>
-  </footer>
-
+  <footer><p>© 2026 Хөвсгөл аймаг дахь Политехник коллеж</p><p>Суралцаж, хөгжиж, бүтээе!</p></footer>
   <script>
     // Цэсний холбоосууд
     document.querySelectorAll('nav a').forEach(function(link) {
@@ -526,60 +168,58 @@
       });
     });
 
-    // Netlify Forms
-    const contactForm = document.getElementById('contact-form');
-    const submitButton = document.getElementById('submit-button');
-    const formStatus = document.getElementById('form-status');
+    // Netlify Forms: элсэлтийн хүсэлтийг илгээх
+    const admissionForm = document.getElementById('admission-form');
+    const admissionSubmit = document.getElementById('admission-submit');
+    const admissionStatus = document.getElementById('admission-status');
 
-    contactForm.addEventListener('submit', async function(event) {
+    admissionForm.addEventListener('submit', async function(event) {
       event.preventDefault();
 
-      if (!contactForm.reportValidity()) {
-        return;
-      }
+      if (!admissionForm.reportValidity()) return;
 
-      submitButton.disabled = true;
-      submitButton.textContent = 'Илгээж байна...';
-      formStatus.textContent = '';
+      admissionSubmit.disabled = true;
+      admissionSubmit.textContent = 'Илгээж байна...';
+      admissionStatus.textContent = '';
 
       try {
-        const formData = new FormData(contactForm);
+        const formData = new FormData(admissionForm);
+        const encodedData = new URLSearchParams();
+
+        for (const [key, value] of formData.entries()) {
+          encodedData.append(key, value);
+        }
 
         const response = await fetch('/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          body: new URLSearchParams(formData).toString()
+          body: encodedData.toString()
         });
 
         if (!response.ok) {
-          throw new Error('Илгээлт амжилтгүй боллоо.');
+          throw new Error('Сервер хүсэлтийг хүлээн авсангүй.');
         }
 
-        formStatus.textContent =
-          'Амжилттай илгээгдлээ! Баярлалаа.';
-
-        formStatus.style.color = 'green';
-        contactForm.reset();
+        admissionStatus.textContent =
+          'Таны элсэлтийн хүсэлт амжилттай илгээгдлээ. Баярлалаа!';
+        admissionStatus.style.color = 'green';
+        admissionForm.reset();
 
       } catch (error) {
-        formStatus.textContent =
-          'Илгээхэд алдаа гарлаа. Дахин оролдоно уу.';
-
-        formStatus.style.color = 'red';
-        console.error('Form error:', error);
+        admissionStatus.textContent =
+          'Илгээхэд алдаа гарлаа. Интернэт болон Netlify Forms тохиргоог шалгаад дахин оролдоно уу.';
+        admissionStatus.style.color = 'red';
+        console.error('Элсэлтийн хүсэлт илгээх алдаа:', error);
 
       } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Мессеж илгээх';
+        admissionSubmit.disabled = false;
+        admissionSubmit.textContent = 'Элсэлтийн хүсэлт илгээх';
       }
     });
 
-    console.log(
-      'Хөвсгөл Политехник Коллежийн сайт ажиллаж байна.'
-    );
+    console.log('Хөвсгөл Политехник Коллежийн сайт ажиллаж байна.');
   </script>
-
 </body>
 </html>
